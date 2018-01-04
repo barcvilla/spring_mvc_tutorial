@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- creamos  una instancia de un bean
+		Esta declaracion le dice a Spring que cree una instancia de la clase Product-->
+	<bean name="product" class="springintro.bean.Product" />
+	<bean id="localDate" class="java.time.LocalDate" factory-method="now"/>
+</beans>
