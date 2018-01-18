@@ -18,6 +18,7 @@ public class Main
 		product1.setName("Excellent snake oil");
 		System.out.println("product1: " + product1.getName());
 		
+		// Usamos el id para identificar el bean
 		LocalDate localDate = context.getBean("localDate", java.time.LocalDate.class);
 	}
 }

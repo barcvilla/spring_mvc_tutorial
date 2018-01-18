@@ -7,4 +7,49 @@
 		Esta declaracion le dice a Spring que cree una instancia de la clase Product-->
 	<bean name="product" class="springintro.bean.Product" />
 	<bean id="localDate" class="java.time.LocalDate" factory-method="now"/>
+	
+	<!-- usando metodo de destroy -->
+	<bean id="executorService" class="java.util.concurrent.Executors" 
+	factory-method="newCachedThreadPool" destroy-method="shutdown"/>
+	
+	<!-- Pasando argumentos a un Constructor -->
+	<bean name="featuredProduct" class="springintro.bean.Product">
+		<constructor-arg name ="name" value="Ultimate Olive Oil" />
+		<constructor-arg name="description" value="The purest olive oil on the market" />
+		<constructor-arg name="price" value="9.95" />
+	</bean>
+	
+	<!-- Pasamos argumentos por index a un constructor -->
+	<bean name="featuredProduct2" class="springintro.bean.Product">
+		<constructor-arg index="0" value="Olive oil light" />
+		<constructor-arg index="1" value="enjoy this healthy oil" />
+		<constructor-arg index="2" value="10.95" />
+	</bean>
+	
+	<!-- Employee depende de Address. Para asegurarnos que cada instancia de Employee contenga una
+	instancia de Address, podemos configurar Spring con estos dos elementos beans.
+	simpleAddress instancia la clase Address y pasa sus valores al constructor de la clase Address-->
+	
+	<bean name="simpleAddress" class="springintro.bean.Address">
+		<constructor-arg name="line1" value="151 Corner Street"/>
+		<constructor-arg name="line2" value=""/>
+		<constructor-arg name="city" value="Albany"/>
+		<constructor-arg name="state" value="NY"/>
+		<constructor-arg name="zipcode" value="9999"/>
+		<constructor-arg name="country" value="US"/>
+	</bean>
+	<!-- employee1 utiliza elementos property para injectar valores a sus metodos setter
+	la propiedad homeAddress hace referencia al objeto Address simpleAddress creado previamente -->
+	<bean name="employee1" class="springintro.bean.Employee">
+		<property name="homeAddress" ref="simpleAddress"/>
+		<property name="firstName" value="Junior" />
+		<property name="lastName" value="Moore" />
+	</bean>
+	
+	<!-- Inyeccion de dependencia basado en el constructor -->
+	<bean name="Employee2" class="springintro.bean.Employee">
+		<constructor-arg name="firstName" value="Senior" />
+		<constructor-arg name="lastName" value="Moore" />
+		<constructor-arg name="homeAddress" value="simpleAddress" />
+	</bean>
 </beans>
