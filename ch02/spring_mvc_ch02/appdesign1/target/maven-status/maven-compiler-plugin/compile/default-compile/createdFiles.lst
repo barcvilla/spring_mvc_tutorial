@@ -1,0 +1,4 @@
+appdesign1\controller\ControllerServlet.class
+appdesign1\form\ProductForm.class
+appdesign1\model\Product.class
+appdesign1\action\SaveProductAction.class
