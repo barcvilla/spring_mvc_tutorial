@@ -8,7 +8,8 @@ package appdesign1.action;
 import appdesign1.model.Product;
 
 /**
- *
+ * Esta es la Action Class, la cual es responsable de almacenar un producto hacia alguna fuente de almacenamiento
+ * en un BD.
  * @author barcvilla
  */
 public class SaveProductAction {
