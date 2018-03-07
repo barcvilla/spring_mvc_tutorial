@@ -92,7 +92,7 @@ public class ControllerServlet extends HttpServlet
             		new SaveProductAction();
             saveProductAction.save(product);
 
-            // Product es almacenado en un scope variable para el acceso por la vista.
+            // Product es almacenado en un scope variable HttpServlet para el acceso por la vista.
             request.setAttribute("product", product);
             //dispatchUrl = "/jsp/ProductDetails.jsp";
             dispatchUrl = "/ProductDetails.jsp";

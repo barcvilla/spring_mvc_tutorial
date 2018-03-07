@@ -17,6 +17,7 @@
             <h4>The product has been saved</h4>
             <p>
             <h5>Details: </h5>
+            <!--utilizamos expression language para acceder al objeto de ambito del producto en HttpServletRequest-->
             Product Name : ${product.name} <br/>
             Description : ${product.description} <br/>
             Price : ${product.price} <br/>
