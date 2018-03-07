@@ -10,5 +10,6 @@
     </properties>
   <modules>
     <module>appdesign1</module>
+    <module>appdesign2</module>
   </modules>
 </project>
