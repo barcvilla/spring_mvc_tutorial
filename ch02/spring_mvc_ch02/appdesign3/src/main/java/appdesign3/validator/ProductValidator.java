@@ -15,23 +15,32 @@ import java.util.List;
  */
 public class ProductValidator 
 {
-    public List<String> validate(ProductForm productForm) {
-        List<String> errors = new ArrayList<>();
-        String name = productForm.getName();
-        if (name == null || name.trim().isEmpty()) {
+    public List<String> validate(ProductForm productForm)
+    {
+        List<String> errors = new ArrayList<String>();
+        String name  = productForm.getName();
+        if(name == null || name.trim().isEmpty())
+        {
             errors.add("Product must have a name");
         }
+        
         String price = productForm.getPrice();
-        if (price == null || price.trim().isEmpty()) {
+        if(price == null || price.trim().isEmpty())
+        {
             errors.add("Product must have a price");
-        } else {
-            try {
+        }
+        else
+        {
+            try
+            {
                 Float.parseFloat(price);
-            } catch (NumberFormatException e) {
+            }
+            catch(NumberFormatException e)
+            {
                 errors.add("Invalid price value");
             }
         }
+        
         return errors;
     }
-    
 }
