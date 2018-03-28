@@ -12,6 +12,7 @@ import util.PDFUtil;
  * @author barcvilla
  */
 public class PDFService {
+    /*Creamos un documento PDF*/
     public void createPDF(String path, String input)
     {
         PDFUtil.createDocument(path, input);
