@@ -24,7 +24,7 @@ import util.DependencyInjector;
 @WebServlet
 (
         name = "ControllerServlet",
-        urlPatterns = {"/Form", "/Pdf"}
+        urlPatterns = {"/form", "/pdf"}
 )
 public class ControllerServlet extends HttpServlet
 {
@@ -49,13 +49,13 @@ public class ControllerServlet extends HttpServlet
         
         int lastIndex = uri.lastIndexOf("/");
         String action = uri.substring(lastIndex + 1);
-        if("Form".equals(action))
+        if("form".equals(action))
         {
-            String dispatchUrl = "Form.jsp";
+            String dispatchUrl = "form.jsp";
             RequestDispatcher rd = request.getRequestDispatcher(dispatchUrl);
             rd.forward(request, response);
         }
-        else if("Pdf".equals(action))
+        else if("pdf".equals(action))
         {
             HttpSession session = request.getSession(true);
             String sessionId = session.getId();
