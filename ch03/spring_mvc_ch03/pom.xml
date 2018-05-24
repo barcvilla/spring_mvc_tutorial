@@ -10,5 +10,6 @@
     </properties>
   <modules>
     <module>springmvc-intro1</module>
+    <module>springmvc-intro2</module>
   </modules>
 </project>
