@@ -8,4 +8,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+  <modules>
+    <module>annotated1</module>
+  </modules>
 </project>
